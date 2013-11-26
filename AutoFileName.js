@@ -1,13 +1,16 @@
+var PluginPath = '/cms/PlugIns/AutoFileName';
+
 function AutoFileName(LoginGuid, SessionKey) {
 	$.ajax({
-		url: '/cms/PlugIns/AutoFileName/RqlConnector.js',
+		url: PluginPath + '/rqlconnector/RqlConnector.js',
 		dataType: 'script',
 		async: false,
 		success: function(){}
 	});
 	
 	AutoFileName.prototype.RqlConnectorObj = new RqlConnector(LoginGuid, SessionKey);
-	//AutoFileName.prototype.RqlConnectorObj.DCOMUrl = '/cms/PlugIns/AutoFileName/rqlaction.asp';
+	AutoFileName.prototype.RqlConnectorObj.DCOMUrl = PluginPath + '/rqlconnector/rqlaction.asp';
+	AutoFileName.prototype.RqlConnectorObj.WebService11ProxyUrl = PluginPath + '/rqlconnector/rqlactionwebservice.aspx';
 }
 
 AutoFileName.prototype.AssignHeadlineAsFileName = function (PageGuid)

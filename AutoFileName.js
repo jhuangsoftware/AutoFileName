@@ -7,7 +7,7 @@ function AutoFileName(LoginGuid, SessionKey) {
 	});
 	
 	AutoFileName.prototype.RqlConnectorObj = new RqlConnector(LoginGuid, SessionKey);
-	AutoFileName.prototype.RqlConnectorObj.DCOMUrl = '/cms/PlugIns/AutoFileName/rqlaction.asp';
+	//AutoFileName.prototype.RqlConnectorObj.DCOMUrl = '/cms/PlugIns/AutoFileName/rqlaction.asp';
 }
 
 AutoFileName.prototype.AssignHeadlineAsFileName = function (PageGuid)
